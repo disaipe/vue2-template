@@ -77,6 +77,13 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin({
         filename: '[name].css'
       })
-    ]
+    ],
+    resolve: {
+      extensions: ['*', '.js', '.vue'],
+      alias: {
+        vue$: 'vue/dist/vue.runtime.esm.js', // w/o template-compiler
+        // vue$: 'vue/dist/vue.esm.js', // full
+      }
+    }
   }
 };
